@@ -7,6 +7,7 @@
  * Global...............Project-specific, globally available variables.
  *
  * TOOLS
+ * Breakpoints..........Mixin for breakpoints
  * Mixins...............Global mixins.
  *
  * GENERIC
@@ -42,6 +43,7 @@
 @import "01-settings/fonts";
 @import "01-settings/global";
 
+@import "02-tools/breakpoints";
 @import "02-tools/mixins";
 
 @import "03-generic/normalize";

@@ -1,0 +1,38 @@
+/**
+ * BREAKPOINTS
+ * Pixel units are used for improved a11y while zooming: https://adamwathan.me/dont-use-em-for-media-queries/
+ */
+
+ $breakpoint__small: 400px;
+ $breakpoint__medium: 800px;
+ $breakpoint__large: 1200px;
+ $breakpoint__xlarge: 1600px;
+ 
+ /**
+  * Following the mobile first approach, breakpoints are defined with "min-width".
+  * You can also define a unique breakpoint with this function: @include breakpoint(min-width, 768px)
+  */
+ 
+ @mixin breakpoint($point, $value: 0) {
+     @if $point == small {
+         @media ( min-width: $breakpoint__small ) {
+             @content;
+         }
+     } @else if $point == medium {
+         @media ( min-width: $breakpoint__medium ) {
+             @content;
+         }
+     } @else if $point == large {
+         @media ( min-width: $breakpoint__large ) {
+             @content;
+         }
+     } @else if $point == xlarge {
+         @media ( min-width: $breakpoint__xlarge ) {
+             @content;
+         }
+     } @else {
+         @media ($point: $value) {
+             @content;
+         }
+     }
+ }
